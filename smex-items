@@ -1,0 +1,35 @@
+
+;; ----- smex-history -----
+(
+ package-autoremove
+ package-list-packages
+ package-install
+ customize-group
+ emacs-version
+ emacs-init-time
+ ivy-switch-view
+)
+
+;; ----- smex-data -----
+(
+ (package-install . 18)
+ (menu-bar-mode . 3)
+ (package-list-packages . 10)
+ (emacs-init-time . 10)
+ (customize . 2)
+ (minibuffer-default-add-shell-commands . 1)
+ (load-theme . 4)
+ (dired . 1)
+ (ivy-mode . 1)
+ (counsel-mode . 2)
+ (swiper . 1)
+ (org-mode . 3)
+ (eshell . 1)
+ (org-capture . 1)
+ (org-agenda . 2)
+ (markdown-mode . 1)
+ (ivy-switch-view . 1)
+ (emacs-version . 1)
+ (customize-group . 1)
+ (package-autoremove . 6)
+)

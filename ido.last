@@ -1,0 +1,43 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/lotsd/.emacs.d/elpa/" . "ace-jump-mode-20140616.115/")
+ ("/home/lotsd/.emacs.d/" . "lisp/")
+ ("/home/lotsd/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/lotsd/.emacs.d/lisp/"
+ "/home/lotsd/.emacs.d/org/"
+ "/home/lotsd/.emacs.d/"
+ "/home/lotsd/.emacs.d/elpa/ace-jump-mode-20140616.115/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "ace-jump-mode-autoloads.el"
+ "init.el"
+ "ace-jump-mode-pkg.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/lotsd/.emacs.d/lisp/" (22910 65185 436532 932000) "init-better-defaults.el" "custom.el" "./" "init-packages.el" "init-ui.el" "init-packages.el~" "init-org.el" "init-keybindings.el" "../")
+
+ ("/home/lotsd/.emacs.d/" (22910 65019 461508 575000) "recentf~" "bookmarks" "recentf" "org/" "./" "Spacemacs-rocks/" "smex-items" "auto-save-list/" "init.el" "lisp/" "ido.last~" "eshell/" "gtd.org" "elpa/" "../" "init.el~" "ido.last")
+
+ ("/home/lotsd/.emacs.d/org/" (22910 58131 238459 956000) "./" "../")
+
+ ("/home/lotsd/" (22910 57412 131715 615000) ".wingpersonal6/" ".goldendict/" ".java/" ".reciteword/" ".install4j" "Calibre 书库/" ".wine/" ".thunderbird/" ".lnav/" ".spyder2/" ".deepinwine/" ".spyder2-py3/" ".gem/" "coreutils_8.25-2ubuntu3~16.04.dsc" "backups/" ".zsh-update" ".bp.cookies" ".zcompdump" ".xinputrc" ".bluefish/" "QQIntl_Backup_2017-07-12-1625/" ".tmux.conf" ".macromedia/" ".lyx/" ".selected_editor" ".themes/" ".cache/" ".vimviews/" ".hardinfo/" ".gnome2/" ".bash_history" ".xdvirc" ".gnupg/" ".esd_auth" ".sudo_as_admin_successful" ".netease-dl/" ".gnome/" ".httpie/" "org/" ".zsh_history" ".openarena/" "./" ".qshell/" ".ICEauthority" ".viminfo" ".presage/" ".pam_environment" ".pki/" ".Xauthority" ".zshrc" ".neverball/" ".emacs.d/" ".cmake/" ".dbus/" "Videos/" ".steam/" "Games/" ".PyCharmCE2017.1/" "Todo/" ".spf13-vim-3/" "*message*-20170730-154002" "snap/" ".gksu.lock" ".bash_logout" ".qd/" "vcode.jpg" "Steam/" ".nano/" "emacsds/" ".steampid" ".vimrc.local" ".kchmviewer/" ".kde/" ".redeclipse/" "Desktop/" ".gconf/" "Pictures/" ".fzf.zsh" ".gemrc" ".dmrc" "Downloads/" ".gnome2_private/" ".apport-ignore.xml" ".vimundo/" ".local/" ".vimrc.before" "MEGAsync/" ".backups/" ".gimp-2.8/" ".autojump/" ".oracle_jre_usage/" ".mozilla/" "Documents/" ".thumbnails/" ".xsession-errors.old" ".nvidia-settings-rc" ".spacemacs" ".adobe/" ".fzf.bash" ".zcompdump-lotsd-Lenovo-5.1.1" ".npm/" ".ssh/" ".sunpinyin/" "Tools/" ".rednotebook/" ".vim/" ".profile" ".ipython/" ".sogouinput/" ".xsession-errors" ".shutter/" "lotsd/" ".oh-my-zsh/" ".icons/" ".vimrc" ".dia/" ".texlive2017/" ".texmf-var/" "Music/" ".travis/" ".config/" ".compiz/" "dwhelper/" "udp.py" ".fonts/" ".steampath" ".emacs.keyfreq" "../" ".cinnamon/" "Templates/" ".bashrc" ".vimrc.bundles" ".nexuiz/" "git-completion.bash" ".qrsync/" ".gvfs/" ".aptitude/" ".gnome-commander/" ".git-credentials" "Public/" ".python_history" ".vimbackup/" ".nv/" ".gitconfig" ".vimswap/" ".fzf/" ".wget-hsts")
+
+ ("/home/" (22873 57812 416771 623000) "./" "lost+found/" "lotsd/" "../")
+
+ ("/home/lotsd/.emacs.d/elpa/ace-jump-mode-20140616.115/" (22910 35176 859412 376000) "ace-jump-mode.el" "./" "ace-jump-mode-autoloads.el" "ace-jump-mode.elc" "ace-jump-mode-pkg.el" "../")
+
+ ("/home/lotsd/.emacs.d/elpa/" (22910 44569 236070 251000) "archives/" "ace-jump-mode-20140616.115/" "powerline-readme.txt" "undo-tree-20170706.246/" "cl-lib-highlight-20140127.1312/" "powerline/" "autopair-20160304.437/" "monokai-theme-readme.txt" "auto-complete-20170124.1845/" "company-readme.txt" "./" "powerline-20170708.1442/" "goto-chg-20131228.659/" "monokai-theme-20170724.740/" "company-0.9.4/" "js2-mode-20170721.602/" "ivy-20170728.1036/" "js2-mode-readme.txt" "smex-20151212.1409/" "gnupg/" "company-0.9.4.signed" "popup-20160709.729/" "evil-20170726.912/" "ivy-readme.txt" "../" "pangu-spacing-20170317.157/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
