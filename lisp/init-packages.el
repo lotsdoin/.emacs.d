@@ -1,8 +1,10 @@
- (when (>= emacs-major-version 24)
+0 (when (>= emacs-major-version 24)
      (require 'package)
      (package-initialize)
      (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
-                      ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
+			      ("melpa" . "http://elpa.emacs-china.org/melpa/")
+			      ("org" . "http://elpa.emacs-china.org/org/")
+			      )))
 
 ;; 注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
 
@@ -14,6 +16,10 @@
                 ;; --- Auto-completion ---
                 company
                 ;; --- Better Editor ---
+                evil-escape
+		ace-window
+		org-plus-contrib
+		evil-leader
                 hungry-delete
 		markdown-mode
 		pangu-spacing
@@ -70,5 +76,37 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
+
+
+;; (require 'evil)
+(evil-mode 1)
+(setcdr evil-insert-state-map nil)
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
+
+;; (global-evil-leader-mode)
+;; (evil-leader/set-key
+;; "ff" 'find-file
+;; "fr" 'recentf-open-files
+;; "bb" 'switch-to-buffer
+;; "bk" 'kill-buffer
+;; "pf" 'counsel-git
+;; "ps" 'helm-do-ag-project-root
+;; "0" 'select-window-0
+;; "1" 'select-window-1
+;; "2" 'select-window-2
+;; "3" 'select-window-3
+;; "fj" 'dired-jump
+;; "w/" 'split-window-right
+;; "w-" 'split-window-below
+;; ":" 'counsel-M-x
+;; "wm" 'delete-other-windows
+;; "qq" 'save-buffers-kill-terminal
+;; "sj" 'counsel-imenu
+;; "sp" 'counsel-git-grep
+;; )
+
+;; press "jk" replace press ESC
+(setq-default evil-escape-key-sequence "jk")
+(setq-default evil-escape-delay 0.1)
 
 (provide 'init-packages)

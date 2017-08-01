@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ org-agenda
  package-autoremove
  package-list-packages
  package-install
  customize-group
  emacs-version
  emacs-init-time
- ivy-switch-view
 )
 
 ;; ----- smex-data -----
@@ -26,10 +26,10 @@
  (org-mode . 3)
  (eshell . 1)
  (org-capture . 1)
- (org-agenda . 2)
+ (org-agenda . 5)
  (markdown-mode . 1)
  (ivy-switch-view . 1)
  (emacs-version . 1)
  (customize-group . 1)
- (package-autoremove . 6)
+ (package-autoremove . 7)
 )

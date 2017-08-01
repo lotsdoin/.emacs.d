@@ -1,46 +1,38 @@
+;; UTF-8 please
+(setq locale-coding-system 'utf-8) ; pretty
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
-;;(load-theme 'wombat)
-;;(load-theme 'monokai)
-
+(set-terminal-coding-system 'utf-8) ; pretty
+(set-keyboard-coding-system 'utf-8) ; pretty
+(set-selection-coding-system 'utf-8) ; please
+(prefer-coding-system 'utf-8) ; with sugar on top
+(setq ring-bell-function 'ignore)
+(global-auto-revert-mode t)
 (setq visible-bell t)
-(menu-bar-mode -1)
-(global-linum-mode)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-;; (set-default 'cursor-type 'hbar)
-(set-default 'cursor-type 'bar)
 ;; disbale backup file
-(setq make-backup-file nil)
+;; (setq make-backup-files nil)
+
+;; Keep all backup and auto-save files in one directory
+(setq backup-directory-alist '(("." . "~/.emacs.d/lotsd/backups/")))
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/auto-save-list/" t)))
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(setq dired-recursive-deletes 'always)
+(setq dired-recursive-copies 'always)
+
 (ido-mode t)
 (column-number-mode)
 (show-paren-mode)
 ;; show match parents
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
-(global-hl-line-mode)
 (winner-mode t)
 (windmove-default-keybindings)
-;;关闭启动画面
-(setq inhibit-startup-message t)
-;; 尽快显示按键序列
-(setq echo-keystrokes 0.1)
 ;; 用来显示当前光标在哪个函数
 (which-func-mode 1)
-;;默认显示 80列就换行
-(setq default-fill-column 80)
 ;;自动重载更改的文件
 (global-auto-revert-mode 1)
 ;; 在文档最后自动插入空白行
 (setq require-final-newline t)
-
-;; mode line上的时间显示
-(display-time-mode t)
-(setq display-time-24hr-format t)
-(setq display-time-day-and-date t)
-;;(setq display-time-interval 60)
-
-;;进行语法加亮
-(global-font-lock-mode t)
 
 ;;鼠标滚轮，默认的滚动太快，这里改为3行
 (defun up-slightly () (interactive) (scroll-up 3))
@@ -48,21 +40,10 @@
 (global-set-key [mouse-4] 'down-slightly)
 (global-set-key [mouse-5] 'up-slightly)
 
-;;高亮光标处单词
-;;(require 'highlight-symbol)
-(global-set-key [(control f8)] 'highlight-symbol-at-point)
-(global-set-key [f8] 'highlight-symbol-next)
-(global-set-key [(shift f8)] 'highlight-symbol-prev)
-
- ;;测试文字
-(set-default-font "Monaco-9")
-(set-fontset-font "fontset-default"  
-                  'gb18030' ("SimHei" . "unicode-bmp"))
-
 
 (require 'recentf)
 (recentf-mode 1)
-(setq recentf-max-menu-items 25)
+(setq recentf-max-menu-items 200)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; 即当你选中一段文字 之后输入一个字符会替换掉你选中部分的文字,但是不安全。
@@ -79,8 +60,48 @@
 
 					    ))
 
+(defun indent-buffer ()
+  "Indent the currently visited buffer."
+  (interactive)
+  (indent-region (point-min) (point-max)))
 
+(defun indent-region-or-buffer ()
+  "Indent a region if selected, otherwise the whole buffer. "
+  (interactive)
+  (save-excursion
+    (if (region-active-p)
+	(progn
+	  (indent-region (region-beginning) (region-end))
+	  (message "Indented selected region."))
+      (progn
+	(indent-buffer)
+	(message "Indented buffer.")))))
 
+(setq hippie-expand-try-functions-list '(try-expand-dabbrev
+					 try-expand-dabbrev-all-buffers
+					 try-expand-dabbrev-from-kill
+					 try-complete-file-name-partially
+					 try-complete-file-name
+					 try-expand-all-abbrevs
+					 try-expand-list
+					 try-expand-line
+					 try-complete-lisp-symbol-partially
+try-complete-lisp-symbol))
+
+(defun hidden-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+(aset buffer-display-table ?\^M []))
+
+(defun remove-dos-eol ()
+  "Replace DOS eolns CR LF with Unix eolns CR"
+  (interactive)
+  (goto-char (point-min))
+(while (search-forward "\r" nil t) (replace-match "")))
+
+;; toggle-truncate-lines 当前行换行
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
+  
 
 (provide 'init-better-defaults)
-
