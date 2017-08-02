@@ -24,7 +24,7 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/lotsd/.emacs.d/lisp/" (22910 65185 436532 932000) "init-better-defaults.el" "custom.el" "./" "init-packages.el" "init-ui.el" "init-packages.el~" "init-org.el" "init-keybindings.el" "../")
+ ("/home/lotsd/.emacs.d/lisp/" (22913 32730 486027 165000) "init-ui.elc" "init-better-defaults.el" "custom.el" "./" "note.init.el" "init-packages.el" "init-ui.el" "init-org.el" "window-numbering.el" "init-keybindings.el" "../")
 
  ("/home/lotsd/.emacs.d/" (22910 65019 461508 575000) "recentf~" "bookmarks" "recentf" "org/" "./" "Spacemacs-rocks/" "smex-items" "auto-save-list/" "init.el" "lisp/" "ido.last~" "eshell/" "gtd.org" "elpa/" "../" "init.el~" "ido.last")
 

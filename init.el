@@ -8,10 +8,14 @@
 (require 'init-ui)
 (require 'init-better-defaults)
 (require 'init-keybindings)
-(require 'org)
+(require 'init-org)
+
+
 
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
+
+
 
 
 
@@ -33,4 +37,3 @@
 ;; ;; Your init file should contain only one such instance.
 ;; ;; If there is more than one, they won't work right.
 ;; )
-(put 'dired-find-alternate-file 'disabled nil)

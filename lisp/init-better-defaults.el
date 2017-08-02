@@ -19,6 +19,7 @@
 
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies 'always)
+(put 'dired-find-alternate-file 'disabled nil)
 
 (ido-mode t)
 (column-number-mode)
@@ -44,6 +45,7 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 200)
+(setq recentf-max-saved-items 200)
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; 即当你选中一段文字 之后输入一个字符会替换掉你选中部分的文字,但是不安全。
@@ -100,8 +102,11 @@ try-complete-lisp-symbol))
   (goto-char (point-min))
 (while (search-forward "\r" nil t) (replace-match "")))
 
-;; toggle-truncate-lines 当前行换行
+;; *toggle-truncate-lines* 当前行换行
+;; 在 *org-mode* 自动换行
+
 (add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
-  
+
+
 
 (provide 'init-better-defaults)

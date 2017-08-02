@@ -56,8 +56,8 @@
 
 (counsel-mode t)
 
-(powerline-center-theme)
-(setq powerline-default-separator 'arrow)
+;; (powerline-center-theme)
+;; (setq powerline-default-separator 'arrow)
 
 (evil-mode t)
 
@@ -106,6 +106,7 @@
 ;; )
 
 ;; press "jk" replace press ESC
+(evil-escape-mode t)
 (setq-default evil-escape-key-sequence "jk")
 (setq-default evil-escape-delay 0.1)
 
