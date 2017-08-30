@@ -1,4 +1,4 @@
-0 (when (>= emacs-major-version 24)
+(when (>= emacs-major-version 24)
      (require 'package)
      (package-initialize)
      (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
@@ -24,14 +24,28 @@
 		markdown-mode
 		pangu-spacing
 		smartparens
-		dash
+		helm
+	        dash
                 swiper
                 counsel
                 smartparens
+		;; --- C++ Mode ---
+		auto-complete
+		
+		;; --- Python Mode ---
+		iedit
+		json-mode
+		elpy
                 ;; --- Major Mode ---
                 js2-mode
                 ;; --- Minor Mode ---
                 ;; --- Themes ---
+                tronesque-theme
+		cyberpunk-theme
+		material-theme
+		ahungry-theme
+		tramp-theme
+		abyss-theme
                 monokai-theme
                 solarized-theme
                 ) "Default packages")
@@ -56,6 +70,8 @@
 
 (counsel-mode t)
 
+
+
 ;; (powerline-center-theme)
 ;; (setq powerline-default-separator 'arrow)
 
@@ -73,7 +89,7 @@
 ;; Delete fast
 (global-hungry-delete-mode t)
 
-(ivy-mode 1)
+(ivy-mode -1)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 
@@ -90,7 +106,7 @@
 ;; "bb" 'switch-to-buffer
 ;; "bk" 'kill-buffer
 ;; "pf" 'counsel-git
-;; "ps" 'helm-do-ag-project-root
+;; "ps" 'helm-do-ag-project-roo
 ;; "0" 'select-window-0
 ;; "1" 'select-window-1
 ;; "2" 'select-window-2
@@ -109,5 +125,69 @@
 (evil-escape-mode t)
 (setq-default evil-escape-key-sequence "jk")
 (setq-default evil-escape-delay 0.1)
+
+;; Python mode
+; Enable elpy mode
+(elpy-enable)
+; Fixing a key binding bug in elpy
+(define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
+; Fixing another key binding bug in iedit mode
+(define-key global-map (kbd "C-c o") 'iedit-mode)
+
+;; C++ Mode
+; start auto-complete with emacs
+(require 'auto-complete)
+; do default config for auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
+; start yasnippet with emacs
+(require 'yasnippet)
+(yas-global-mode 1)
+; let's define a function which initializes auto-complete-c-headers and gets called for c/c++ hooks
+(defun my:ac-c-header-init ()
+  (require 'auto-complete-c-headers)
+  (add-to-list 'ac-sources 'ac-source-c-headers)
+  (add-to-list 'achead:include-directories '"/usr/lib/gcc/x86_64-linux-gnu/5.4.0/include/")
+)
+; now let's call this function from c/c++ hooks
+(add-hook 'c++-mode-hook 'my:ac-c-header-init)
+(add-hook 'c-mode-hook 'my:ac-c-header-init)
+
+; Fix iedit bug in Mac
+;; (define-key global-map (kbd "C-c ;") 'iedit-mode)
+
+; start flymake-google-cpplint-load
+; let's define a function for flymake initialization
+;; (defun my:flymake-google-init () 
+;; (require 'flymake-google-cpplint)
+;; (custom-set-variables
+;; '(flymake-google-cpplint-command "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/cpplint"))
+;; (flymake-google-cpplint-load)
+;; )
+;; (add-hook 'c-mode-hook 'my:flymake-google-init)
+;; (add-hook 'c++-mode-hook 'my:flymake-google-init)
+
+; start google-c-style with emacs
+;; (require 'google-c-style)
+;; (add-hook 'c-mode-common-hook 'google-set-c-style)
+;; (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
+; turn on Semantic
+(semantic-mode 1)
+; let's define a function which adds semantic as a suggestion backend to auto complete
+; and hook this function to c-mode-common-hook
+(defun my:add-semantic-to-autocomplete() 
+  (add-to-list 'ac-sources 'ac-source-semantic)
+)
+(add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
+; turn on ede mode 
+(global-ede-mode 1)
+; create a project for our program.
+(ede-cpp-root-project "my project" :file "~/lotsd/projects/C++/main.cpp"
+		      :include-path '("/../my_inc"))
+; you can use system-include-path for setting up the system header file locations.
+; turn on automatic reparsing of open buffers in semantic
+(global-semantic-idle-scheduler-mode 1)
+
 
 (provide 'init-packages)

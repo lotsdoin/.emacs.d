@@ -9,8 +9,9 @@
 
 ;; ----- ido-work-directory-list -----
 (
- "/home/lotsd/.emacs.d/lisp/"
+ "/home/lotsd/.emacs.d/org/english/"
  "/home/lotsd/.emacs.d/org/"
+ "/home/lotsd/.emacs.d/lisp/"
  "/home/lotsd/.emacs.d/"
  "/home/lotsd/.emacs.d/elpa/ace-jump-mode-20140616.115/"
 )
@@ -24,11 +25,13 @@
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/home/lotsd/.emacs.d/org/english/" (22949 27352 661178 858000) ".#english_rock.org" "./" "GET6/" "english_rock.org" "../" "GET4/")
+
+ ("/home/lotsd/.emacs.d/org/" (22930 38173 498604 153000) "prv_mylatex.log" "sachachua.org" "beamer.log" "beamer_flymake.toc" "beamer_flymake.nav" "master-pl.org" "someday.org" "beamer.toc" "emacs.html" "inbox.org" "mylatex_flymake.log" "beamer.pdf" "mypdf.org" "mylatex.aux" "Readme.org" "beamer_flymake.out" "myinit.org" "mylatex.dvi" "master-pl.md" "beamer.nav" "sachachua.html" "myinit.html" "beamer.6.vrb" "org-mode1.html" "mylatex.pdf" "org-mode.md" "./" "emacs.org" "org-mode.org" "_region_.prv/" ".#london.org" "master-pl.html" "vim.org" "beamer_flymake.snm" "beamer_flymake.tex" "emacs.png" "tickler.org" "english/" "london_flymake.log" "book.org" "quote.org" "know.org" "mylatex.tex" "sacha.html" "beamer_flymake.aux" "_region_.log" "org-mode.tex" "london.pdf" "london_flymake.tex" "mylatex.log" "beamer_flymake.log" "beamer.prv/" "google.html" "london.org" "london.tex" "health.org" "org-mode.html" "beamer.5.vrb" "emacsclient" "beamer.tex" "beamer.out" "beamer.snm" "../" "auto/" "beamer.aux" "beamer.org" "gtd.org~" "org-mode1.org" "init-misc.el" "mylatex_flymake.aux" "_region_.tex" "journal.org")
+
  ("/home/lotsd/.emacs.d/lisp/" (22913 32730 486027 165000) "init-ui.elc" "init-better-defaults.el" "custom.el" "./" "note.init.el" "init-packages.el" "init-ui.el" "init-org.el" "window-numbering.el" "init-keybindings.el" "../")
 
  ("/home/lotsd/.emacs.d/" (22910 65019 461508 575000) "recentf~" "bookmarks" "recentf" "org/" "./" "Spacemacs-rocks/" "smex-items" "auto-save-list/" "init.el" "lisp/" "ido.last~" "eshell/" "gtd.org" "elpa/" "../" "init.el~" "ido.last")
-
- ("/home/lotsd/.emacs.d/org/" (22910 58131 238459 956000) "./" "../")
 
  ("/home/lotsd/" (22910 57412 131715 615000) ".wingpersonal6/" ".goldendict/" ".java/" ".reciteword/" ".install4j" "Calibre 书库/" ".wine/" ".thunderbird/" ".lnav/" ".spyder2/" ".deepinwine/" ".spyder2-py3/" ".gem/" "coreutils_8.25-2ubuntu3~16.04.dsc" "backups/" ".zsh-update" ".bp.cookies" ".zcompdump" ".xinputrc" ".bluefish/" "QQIntl_Backup_2017-07-12-1625/" ".tmux.conf" ".macromedia/" ".lyx/" ".selected_editor" ".themes/" ".cache/" ".vimviews/" ".hardinfo/" ".gnome2/" ".bash_history" ".xdvirc" ".gnupg/" ".esd_auth" ".sudo_as_admin_successful" ".netease-dl/" ".gnome/" ".httpie/" "org/" ".zsh_history" ".openarena/" "./" ".qshell/" ".ICEauthority" ".viminfo" ".presage/" ".pam_environment" ".pki/" ".Xauthority" ".zshrc" ".neverball/" ".emacs.d/" ".cmake/" ".dbus/" "Videos/" ".steam/" "Games/" ".PyCharmCE2017.1/" "Todo/" ".spf13-vim-3/" "*message*-20170730-154002" "snap/" ".gksu.lock" ".bash_logout" ".qd/" "vcode.jpg" "Steam/" ".nano/" "emacsds/" ".steampid" ".vimrc.local" ".kchmviewer/" ".kde/" ".redeclipse/" "Desktop/" ".gconf/" "Pictures/" ".fzf.zsh" ".gemrc" ".dmrc" "Downloads/" ".gnome2_private/" ".apport-ignore.xml" ".vimundo/" ".local/" ".vimrc.before" "MEGAsync/" ".backups/" ".gimp-2.8/" ".autojump/" ".oracle_jre_usage/" ".mozilla/" "Documents/" ".thumbnails/" ".xsession-errors.old" ".nvidia-settings-rc" ".spacemacs" ".adobe/" ".fzf.bash" ".zcompdump-lotsd-Lenovo-5.1.1" ".npm/" ".ssh/" ".sunpinyin/" "Tools/" ".rednotebook/" ".vim/" ".profile" ".ipython/" ".sogouinput/" ".xsession-errors" ".shutter/" "lotsd/" ".oh-my-zsh/" ".icons/" ".vimrc" ".dia/" ".texlive2017/" ".texmf-var/" "Music/" ".travis/" ".config/" ".compiz/" "dwhelper/" "udp.py" ".fonts/" ".steampath" ".emacs.keyfreq" "../" ".cinnamon/" "Templates/" ".bashrc" ".vimrc.bundles" ".nexuiz/" "git-completion.bash" ".qrsync/" ".gvfs/" ".aptitude/" ".gnome-commander/" ".git-credentials" "Public/" ".python_history" ".vimbackup/" ".nv/" ".gitconfig" ".vimswap/" ".fzf/" ".wget-hsts")
 

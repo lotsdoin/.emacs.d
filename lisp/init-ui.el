@@ -1,7 +1,7 @@
 ;; Open with full screen
 ;; (setq initial-frame-alist (quote ((fullscreen . maximized))))
 ;;(load-theme 'wombat)
-;;(load-theme 'monokai)
+(load-theme 'tramp t)
 (menu-bar-mode -1)
 (global-linum-mode)
 (tool-bar-mode -1)
@@ -35,8 +35,7 @@
 
   ;; Setting English Font Consolas
   (set-face-attribute
-   'default nil :font "Monaco 9")
-  ;; Setting Chinese Font
+   'default nil :font "Monaco 9")  ;; Setting Chinese Font
   ;;测试文字
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font)
@@ -62,13 +61,19 @@
 ;; (if window-system
 ;;(s-font))
 
-(setq evil-normal-state-tag (propertize "[Normal]" 'face '((:background "green" :foreground "black")))
-      evil-emacs-state-tag    (propertize "[Emacs]" 'face '((:background "orange" :foreground "black")))
-      evil-insert-state-tag   (propertize "[Insert]" 'face '((:background "red") :foreground "white"))
-      evil-motion-state-tag   (propertize "[Motion]" 'face '((:background "blue") :foreground "white"))
-      evil-visual-state-tag   (propertize "[Visual]" 'face '((:background "grey80" :foreground "black")))
-      evil-operator-state-tag (propertize "[Operator]" 'face '((:background "purple"))))
-
+;; evil-state-tag 设置如下:
+;; (setq evil-normal-state-tag (propertize "[Normal]" 'face '((:background "green" :foreground "black")))
+;;       evil-emacs-state-tag    (propertize "[Emacs]" 'face '((:background "orange" :foreground "black")))
+;;       evil-insert-state-tag   (propertize "[Insert]" 'face '((:background "red") :foreground "white"))
+;;       evil-motion-state-tag   (propertize "[Motion]" 'face '((:background "blue") :foreground "white"))
+;;       evil-visual-state-tag   (propertize "[Visual]" 'face '((:background "grey80" :foreground "black")))
+;;       evil-operator-state-tag (propertize "[Operator]" 'face '((:background "purple"))))
+    (setq evil-normal-state-tag   (propertize "[N]" 'face '((:background "DarkGoldenrod2" :foreground "black")))
+          evil-emacs-state-tag    (propertize "[E]" 'face '((:background "SkyBlue2" :foreground "black")))
+          evil-insert-state-tag   (propertize "[I]" 'face '((:background "chartreuse3") :foreground "white"))
+          evil-motion-state-tag   (propertize "[M]" 'face '((:background "plum3") :foreground "white"))
+          evil-visual-state-tag   (propertize "[V]" 'face '((:background "gray" :foreground "black")))
+          evil-operator-state-tag (propertize "[O]" 'face '((:background "purple"))))
 ;; 简化 major-mode 的名字，替换表中没有的显示原名
 
 (defun codefalling//simplify-major-mode-name ()
@@ -82,7 +87,6 @@
                                      GFM "𝓜"
                                      Org "𝒪"
                                      Text "𝓣"
-				     jk "vim"
                                      Fundamental "ℱ"
                                      ))
          (replace-name (plist-get replace-table (intern major-name))))
@@ -141,8 +145,8 @@
   '(:eval (evil-generate-mode-line-tag evil-state))
 
   " "
-  ;; add the time, with the date and the emacs uptime in the tooltip
-  '(:eval (propertize (format-time-string "%H:%M")
+  ;; add the time, with the date and the emacs uptime in the tooltip "%H:%M"
+  '(:eval (propertize (format-time-string "%Y-%m-%d %a %H:%M")
                       'help-echo
                       (concat (format-time-string "%c; ")
                               (emacs-uptime "Uptime:%hh"))))
@@ -153,11 +157,37 @@
   ))
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Theme hooks
 
+(defvar gh/theme-hooks nil
+  "((theme-id . function) ...)")
 
+(defun gh/add-theme-hook (theme-id hook-func)
+  (add-to-list 'gh/theme-hooks (cons theme-id hook-func)))
 
+(defun gh/disable-all-themes ()
+  (interactive)
+  (mapc #'disable-theme custom-enabled-themes))
 
+(defun gh/load-theme-advice (f theme-id &optional no-confirm no-enable &rest args)
+  "Enhances `load-theme' in two ways:
+1. Disables enabled themes for a clean slate.
+2. Calls functions registered using `gh/add-theme-hook'."
+  (unless no-enable
+    (gh/disable-all-themes))
+  (prog1
+      (apply f theme-id no-confirm no-enable args)
+    (unless no-enable
+      (pcase (assq theme-id gh/theme-hooks)
+        (`(,_ . ,f) (funcall f))))))
 
-	  
+(advice-add 'load-theme
+            :around
+            #'gh/load-theme-advice)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  
 (provide 'init-ui)
 

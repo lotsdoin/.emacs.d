@@ -1,14 +1,8 @@
-
-(global-set-key (kbd "C-M-)") 'transparency-increase)
-(global-set-key (kbd "C-M-(") 'transparency-decrease)
-
-
 ;;open init fast use F1
 (defun open-my-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
-(global-set-key (kbd "<f1>") 'open-my-init-file)
-
+  (global-set-key (kbd "<f1>") 'open-my-init-file)
 ;; open init-packages.el use F2
 (defun open-my-init-packages-file()
   (interactive)
@@ -40,7 +34,6 @@
 ;; ivy-recentf better than recentf-open-files
 ;;(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 (global-set-key (kbd "\C-x\ \C-r") 'ivy-recentf)
-
 (global-set-key (kbd "\C-s") 'swiper)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "M-x") 'counsel-M-x) 
@@ -88,9 +81,9 @@
 
 ;; It can do as "J" in vim.
 ;; (global-set-key (kbd "C-j")
-;;	(lambda ()
-;;	    (interactive)
-;;	    (join-line -1)))
+;;     (lambda ()
+;;         (interactive)
+;;         (join-line -1)))
 
 ;; (ace-jump-mode 1)
 ;; (define-key global-map (kbd "C-c SPC") 'ace-jump-mode))
@@ -98,5 +91,14 @@
 (global-set-key (kbd "C-c j") 'ace-jump-mode)
 
 (global-set-key (kbd "C-x p") 'ace-window)
+
+
+(global-set-key (kbd "C-M-)") 'transparency-increase)
+(global-set-key (kbd "C-M-(") 'transparency-decrease)
+
+(global-set-key (kbd "C-c e") 'iedit-mode)
+
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 (provide 'init-keybindings)

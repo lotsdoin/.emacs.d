@@ -1,0 +1,24 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("myfont" variable nil nil [169 203])
+            ("textImage" variable nil nil [207 261])
+            ("12" code nil nil [262 264])
+            ("sys" code nil nil [380 390])
+            ("17" code nil nil [391 393])
+            ("screen" code nil nil [402 419])
+            ("screen" code nil nil [427 460])
+            ("pygame" code nil nil [468 491]))          
+      :file "game0.py"
+      :pointmax 492
+      :fsize 491
+      :lastmodtime '(22917 39152 66347 386000)
+      :unmatched-syntax '((INDENT_BLOCK 1 . 166) (NUMBER_LITERAL 461 . 463) (NAME 468 . 474) ($EOI 491 . 491) (INDENT_BLOCK 1 . 166))))
+  :file "!home!lotsd!lotsd!projects!Python!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

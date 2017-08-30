@@ -4,3 +4,25 @@ ls
 cd ..
 ls
 ls
+ls
+gcc hellow.cpp -o hellow
+./hellow
+./hellow /n
+cd ..
+ls
+cd org/
+lsls
+ls
+rm gtd.org
+ls
+emacs
+emacs
+ls
+mv git-completion.bash .bin/
+ls
+ls -al
+k
+ls
+time
+who
+now

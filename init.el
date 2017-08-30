@@ -9,6 +9,7 @@
 (require 'init-better-defaults)
 (require 'init-keybindings)
 (require 'init-org)
+(require 'emacs-auctex-config)
 
 
 
@@ -17,23 +18,3 @@
 
 
 
-
-
-;; (custom-set-variables
-;; ;; custom-set-variables was added by Custom.
-;; ;; If you edit it by hand, you could mess it up, so be careful.
-;; ;; Your init file should contain only one such instance.
-;; ;; If there is more than one, they won't work right.
-;; '(company-dabbrev-minimum-length 1)
-;; '(custom-safe-themes
-;; (quote
-;;("9492cf1ac00c8a1f7130a867a97404dfeb6727801c6b2b40b853b91543f7af67" default)))
-;; '(package-selected-packages
-;; (quote
-;;(counsel evil cl-lib-highlight js2-mode ivy powerline monokai-theme company ace-jump-mode undo-tree auto-complete autopair ))))
-;; (custom-set-faces
-;; ;; custom-set-faces was added by Custom.
-;; ;; If you edit it by hand, you could mess it up, so be careful.
-;; ;; Your init file should contain only one such instance.
-;; ;; If there is more than one, they won't work right.
-;; )
